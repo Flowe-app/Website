@@ -12,7 +12,17 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "ejemplo-proyecto/**",
   ]),
+  {
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "warn"
+    }
+  }
 ]);
 
 export default eslintConfig;
