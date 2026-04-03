@@ -534,11 +534,21 @@ section { padding: 6rem 2rem; }
 .compare-body { border-radius: 0 0 20px 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.9); border-top: none; box-shadow: 0 16px 40px rgba(91,143,185,0.05); }
 .compare-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: rgba(255, 255, 255, 0.4); }
 .compare-row:last-child .compare-cell { border-bottom: none; }
-.compare-cell { background: rgba(255,255,255,0.85); padding: 1rem 1.5rem; font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); display: flex; align-items: center; gap: 0.5rem; }
+.compare-cell { 
+  background: rgba(255,255,255,0.6); 
+  backdrop-filter: blur(12px); 
+  padding: 1rem 1.25rem; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: var(--ink-soft); 
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+}
 .compare-cell.feature-name { font-weight: 600; color: var(--ink); }
 .compare-cell.flowe-cell { background: rgba(91,143,185,0.12); font-weight: 600; color: var(--ink); }
-.check { color: var(--deep-sage); font-size: 1.1rem; font-weight: 700; }
-.cross { color: #A0B0C0; font-size: 1rem; font-weight: 700; }
+.check { color: var(--deep-sage); font-size: 1.1rem; font-weight: 700; flex-shrink: 0; }
+.cross { color: #A0B0C0; font-size: 1rem; font-weight: 700; flex-shrink: 0; }
 
 /* ── TESTIMONIALS ── */
 .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
@@ -690,8 +700,21 @@ section { padding: 6rem 2rem; }
   .nav-links { display: none; }
   .phone-frame { width: 240px; height: 480px; }
   .chip-left, .chip-right { display: none; }
-  .compare-header, .compare-row { grid-template-columns: 1fr 1fr 1fr; }
-  .compare-cell { padding: 0.75rem; font-size: 0.78rem; }
+  
+  /* Fixed Compare Grid for Mobile */
+  .compare-header, .compare-row { 
+    grid-template-columns: 1.2fr 1fr 1.2fr; 
+  }
+  .compare-col-head { padding: 1rem 0.5rem; }
+  .compare-brand { font-size: 0.95rem; }
+  .compare-cell { 
+    padding: 0.85rem 0.5rem; 
+    font-size: 0.72rem; 
+    line-height: 1.2;
+    gap: 0.25rem;
+  }
+  .check, .cross { font-size: 0.9rem; }
+
   .footer-top { grid-template-columns: 1fr 1fr; }
   .hero-mockup { display: none; }
 }
