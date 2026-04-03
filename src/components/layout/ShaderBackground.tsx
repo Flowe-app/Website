@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { Shader, Swirl } from "shaders/react"
+import { Shader, Swirl, ChromaFlow } from "shaders/react"
 
 export function ShaderBackground() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -53,6 +53,22 @@ export function ShaderBackground() {
           opacity={0.4}
         />
       </Shader>
+      <div className="absolute inset-0 opacity-60">
+        <Shader className="h-full w-full" dpr={0.75}>
+          <ChromaFlow
+            baseColor="#ffffff"
+            upColor="#5B8FB9"
+            downColor="#ffffff"
+            leftColor="#E8C97D"
+            rightColor="#7BAE7F"
+            intensity={0.5}
+            radius={1.8}
+            momentum={25}
+            maskType="alpha"
+            opacity={0.6}
+          />
+        </Shader>
+      </div>
     </div>
   )
 }
