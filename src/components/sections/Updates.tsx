@@ -1,8 +1,15 @@
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Updates() {
   const { t } = useLanguage();
   
+  const postImages = [
+    "/updates/update-dev-1.png",
+    "/updates/update-ai-2.png",
+    "/updates/update-design-3.png"
+  ];
+
   return (
     <section className="updates" id="updates">
       <div className="container">
@@ -22,8 +29,13 @@ export default function Updates() {
               className="update-card reveal"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className={`update-banner ${index === 2 ? 'lav-bg' : index === 1 ? 'sage-bg' : 'rose-bg'}`}>
-                {index === 2 ? '🎨' : index === 1 ? '🤖' : '🌊'}
+              <div className="update-banner">
+                <Image 
+                  src={postImages[index]} 
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="update-body">
                 <div className="update-tag">{post.tag}</div>
