@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { en, es, Translations } from "@/lib/translations";
 
 type Locale = "en" | "es";
@@ -14,19 +14,12 @@ interface LanguageContextProps {
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [locale, setLocale] = useState<Locale>("en");
-
-  useEffect(() => {
-    const savedLocale = localStorage.getItem("flowe-locale") as Locale;
-    if (savedLocale && (savedLocale === "en" || savedLocale === "es")) {
-      setLocale(savedLocale);
-    } else {
-      const browserLocale = navigator.language.split("-")[0];
-      if (browserLocale === "es") {
-        setLocale("es");
-      }
-    }
-  }, []);
+  const [locale, setLocale] = useState<Locale>(() => {
+    if (typeof window === "undefined") return "en";
+    const saved = localStorage.getItem("flowe-locale");
+    if (saved === "en" || saved === "es") return saved;
+    return navigator.language.startsWith("es") ? "es" : "en";
+  });
 
   const changeLocale = (newLocale: Locale) => {
     setLocale(newLocale);

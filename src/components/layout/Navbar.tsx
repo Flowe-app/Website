@@ -17,7 +17,7 @@ export default function Navbar() {
     );
 
     const observer = new IntersectionObserver(
-      (_entries) => {
+      () => {
         // Recheck all tracked sections on any change
         const anyVisible = darkSections.some((el) => {
           const rect = el.getBoundingClientRect();
