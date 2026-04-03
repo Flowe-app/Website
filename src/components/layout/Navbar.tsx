@@ -53,11 +53,13 @@ export default function Navbar() {
             </li>
           </ul>
           
-          <LanguageSwitcher darkNavbar={isDarkTheme} />
+          <div className="nav-actions">
+            <LanguageSwitcher darkNavbar={isDarkTheme} />
 
-          <Link href="#beta" className="nav-cta">
-            {t.nav.joinBeta}
-          </Link>
+            <Link href="#beta" className="nav-cta">
+              {t.nav.joinBeta}
+            </Link>
+          </div>
         </div>
       </nav>
     </header>

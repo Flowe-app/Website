@@ -129,6 +129,20 @@ body {
 
 .nav-cta:hover { background: #4A7EA8 !important; transform: translateY(-1px); }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-actions {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+}
+
 /* ── HEADER DARK THEME INVERSION ── */
 .site-header.theme-dark .nav-logo { color: #ffffff; }
 .site-header.theme-dark .nav-links a { color: rgba(255,255,255,0.8); }
