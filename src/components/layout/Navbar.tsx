@@ -40,7 +40,7 @@ export default function Navbar() {
           <Image src="/logo-flowe.png" alt="Flowē Logo" width={28} height={28} className="object-contain" priority />
           <span>Flowē<span>.</span></span>
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
           <ul className="nav-links">
             <li>
               <Link href="#features">{t.nav.features}</Link>
@@ -53,9 +53,7 @@ export default function Navbar() {
             </li>
           </ul>
           
-          <div className="hidden md:block">
-            <LanguageSwitcher darkNavbar={isDarkTheme} />
-          </div>
+          <LanguageSwitcher darkNavbar={isDarkTheme} />
 
           <Link href="#beta" className="nav-cta">
             {t.nav.joinBeta}

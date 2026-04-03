@@ -18,7 +18,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (typeof window === "undefined") return "en";
     const saved = localStorage.getItem("flowe-locale");
     if (saved === "en" || saved === "es") return saved;
-    return navigator.language.startsWith("es") ? "es" : "en";
+    // Always default to English regardless of browser language
+    return "en";
   });
 
   const changeLocale = (newLocale: Locale) => {
