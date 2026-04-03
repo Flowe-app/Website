@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 
 interface LanguageSwitcherProps {
   darkNavbar?: boolean;
+  className?: string;
 }
 
-export default function LanguageSwitcher({ darkNavbar = false }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({ darkNavbar = false, className = "" }: LanguageSwitcherProps) {
   const { locale, setLocale } = useLanguage();
 
   return (
@@ -16,7 +17,7 @@ export default function LanguageSwitcher({ darkNavbar = false }: LanguageSwitche
         darkNavbar 
           ? "bg-black/10" 
           : "bg-white/20 shadow-sm"
-      }`}
+      } ${className}`}
       onClick={() => setLocale(locale === "en" ? "es" : "en")}
     >
       {/* Background Pill - The Glass Slide */}
