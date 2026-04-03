@@ -46,22 +46,22 @@ export function ShaderBackground() {
       <Shader className="h-full w-full" dpr={1}>
         <Swirl
           colorA="#ffffff"
-          colorB="#5B8FB9" /* Original Primary */
+          colorB="#5B8FB9"
           speed={0.4}
           detail={0.7}
           blend={50}
-          opacity={0.4} /* Much lower opacity so it stays soft */
+          opacity={0.4}
         />
       </Shader>
-      <div className="absolute inset-0 opacity-60"> {/* Reduced overall layer opacity */}
-        <Shader className="h-full w-full" dpr={1}>
+      <div className="absolute inset-0 opacity-60">
+        <Shader className="h-full w-full" dpr={0.75}>
           <ChromaFlow
             baseColor="#ffffff"
-            upColor="#5B8FB9" /* Original Primary */
+            upColor="#5B8FB9"
             downColor="#ffffff"
-            leftColor="#E8C97D" /* Original Amber */
-            rightColor="#7BAE7F" /* Original Sage Green */
-            intensity={0.5} /* Reduced intensity to avoid deep saturation */
+            leftColor="#E8C97D"
+            rightColor="#7BAE7F"
+            intensity={0.5}
             radius={1.8}
             momentum={25}
             maskType="alpha"

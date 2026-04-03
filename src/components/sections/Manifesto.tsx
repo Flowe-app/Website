@@ -1,16 +1,17 @@
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Manifesto() {
+  const { t } = useLanguage();
+
   return (
     <section className="manifesto">
       <div className="container">
-        <p className="manifesto-quote">
-          "Productivity tools were built for <em>neurotypical brains.</em>
-          <br />
-          We built Flowē for everyone else."
-        </p>
+        <p 
+          className="manifesto-quote"
+          dangerouslySetInnerHTML={{ __html: t.manifesto.quote }}
+        />
         <p className="manifesto-body">
-          ADHD, autism, dyslexia — these aren't limitations. They're different
-          operating systems. Flowē speaks your language, adapts to your energy,
-          and builds routines that actually stick.
+          {t.manifesto.body}
         </p>
       </div>
     </section>

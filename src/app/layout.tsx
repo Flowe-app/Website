@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "A routines app designed for the way your brain actually works — with adaptive AI, visual schedules, and zero overwhelm.",
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,10 +29,12 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ShaderBackground />
-        <main className="w-full relative z-10 flex flex-col">
-          {children}
-        </main>
+        <LanguageProvider>
+          <ShaderBackground />
+          <main className="w-full relative z-10 flex flex-col">
+            {children}
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );

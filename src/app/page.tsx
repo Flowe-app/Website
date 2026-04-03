@@ -21,6 +21,13 @@ export default function Home() {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
             observer.unobserve(entry.target);
+            // Free compositor layer once animation is done
+            const el = entry.target as HTMLElement;
+            el.addEventListener(
+              "transitionend",
+              () => { el.style.willChange = "auto"; },
+              { once: true }
+            );
           }
         });
       },

@@ -1,93 +1,78 @@
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
+import { TwitterIcon, InstagramIcon, DiscordIcon, GithubIcon } from "@/components/ui/Icons";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
-    <footer>
+    <footer className="footer-section">
       <div className="footer-inner">
         <div className="footer-top">
-          <div>
+          <div className="footer-brand-col">
             <div className="footer-brand flex items-center gap-2">
               <Image src="/logo-flowe.png" alt="Flowē Logo" width={32} height={32} className="object-contain" />
               <span>Flowē<span>.</span></span>
             </div>
-            <p className="footer-tagline">
-              Your rhythm, your flow.
-              <br />A productivity app for neurodivergent minds.
-            </p>
+            <p 
+              className="footer-tagline"
+              dangerouslySetInnerHTML={{ __html: t.footer.tagline }}
+            />
             <div className="footer-social">
-              <a href="#" className="social-btn" title="Twitter/X">
-                𝕏
+              <a href="#" className="social-link" title="Twitter/X">
+                <TwitterIcon />
               </a>
-              <a href="#" className="social-btn" title="Instagram">
-                ◻
+              <a href="#" className="social-link" title="Instagram">
+                <InstagramIcon />
               </a>
-              <a href="#" className="social-btn" title="Discord">
-                ◈
+              <a href="#" className="social-link" title="Discord">
+                <DiscordIcon />
               </a>
-              <a href="#" className="social-btn" title="GitHub">
-                ⌥
+              <a href="#" className="social-link" title="GitHub">
+                <GithubIcon />
               </a>
             </div>
           </div>
 
-          <div>
-            <div className="footer-col-title">Product</div>
-            <ul className="footer-links">
-              <li>
-                <a href="#features">Features</a>
-              </li>
-              <li>
-                <a href="#compare">Why Flowē</a>
-              </li>
-              <li>
-                <a href="#beta">Join Beta</a>
-              </li>
-              <li>
-                <a href="#">Roadmap</a>
-              </li>
-            </ul>
-          </div>
+          <div className="footer-nav-grid">
+            <div>
+              <div className="footer-col-title">{t.footer.cols.product.title}</div>
+              <ul className="footer-links">
+                <li><a href="#features">{t.footer.cols.product.links[0]}</a></li>
+                <li><a href="#compare">{t.footer.cols.product.links[1]}</a></li>
+                <li><a href="#beta">{t.footer.cols.product.links[2]}</a></li>
+                <li><a href="#">{t.footer.cols.product.links[3]}</a></li>
+              </ul>
+            </div>
 
-          <div>
-            <div className="footer-col-title">Updates</div>
-            <ul className="footer-links">
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Changelog</a>
-              </li>
-              <li>
-                <a href="#">Dev Notes</a>
-              </li>
-              <li>
-                <a href="#">Newsletter</a>
-              </li>
-            </ul>
-          </div>
+            <div>
+              <div className="footer-col-title">{t.footer.cols.updates.title}</div>
+              <ul className="footer-links">
+                <li><a href="#">{t.footer.cols.updates.links[0]}</a></li>
+                <li><a href="#">{t.footer.cols.updates.links[1]}</a></li>
+                <li><a href="#">{t.footer.cols.updates.links[2]}</a></li>
+                <li><a href="#">{t.footer.cols.updates.links[3]}</a></li>
+              </ul>
+            </div>
 
-          <div>
-            <div className="footer-col-title">Info</div>
-            <ul className="footer-links">
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#">Terms</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
+            <div>
+              <div className="footer-col-title">{t.footer.cols.info.title}</div>
+              <ul className="footer-links">
+                <li><a href="#">{t.footer.cols.info.links[0]}</a></li>
+                <li><a href="#">{t.footer.cols.info.links[1]}</a></li>
+                <li><a href="#">{t.footer.cols.info.links[2]}</a></li>
+                <li><a href="#">{t.footer.cols.info.links[3]}</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span className="footer-copy">© 2025 Flowē. All rights reserved.</span>
-          <span className="footer-made">Made with care in Costa Rica 🇨🇷</span>
+          <div className="footer-bottom-line"></div>
+          <div className="footer-bottom-content">
+            <span className="footer-copy">{t.footer.copy}</span>
+            <span className="footer-made">{t.footer.made}</span>
+          </div>
         </div>
       </div>
     </footer>
