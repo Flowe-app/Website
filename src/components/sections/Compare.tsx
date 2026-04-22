@@ -1,4 +1,5 @@
 import { useLanguage } from "@/context/LanguageContext";
+import DynamicIcon from "@/components/ui/DynamicIcon";
 
 export default function Compare() {
   const { t } = useLanguage();
@@ -36,10 +37,10 @@ export default function Compare() {
             <div key={index} className="compare-row">
               <div className="compare-cell feature-name">{row.name}</div>
               <div className="compare-cell">
-                {!row.check && "❌"} {row.tiimo}
+                {!row.check && <DynamicIcon type="cross" className="compare-icon-cross" />} {row.tiimo}
               </div>
               <div className="compare-cell flowe-cell">
-                {row.check && "✅"} {row.flowe}
+                {row.check && <DynamicIcon type="check" className="compare-icon-check" />} {row.flowe}
               </div>
             </div>
           ))}
