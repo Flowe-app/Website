@@ -41,8 +41,10 @@ export default function DynamicIcon({ type, className = "" }: { type: IconType, 
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const ua = navigator.userAgent;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsApple(/Mac|iPhone|iPod|iPad/i.test(ua));
   }, []);
 

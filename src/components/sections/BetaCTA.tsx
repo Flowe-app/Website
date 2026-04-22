@@ -30,7 +30,7 @@ export default function BetaCTA() {
       }
 
       setStatus("success");
-    } catch (err) {
+    } catch (_err) {
       setStatus("serverError");
     }
   };
