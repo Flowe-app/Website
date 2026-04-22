@@ -36,10 +36,10 @@ export default function Compare() {
             <div key={index} className="compare-row">
               <div className="compare-cell feature-name">{row.name}</div>
               <div className="compare-cell">
-                {!row.check && <span className="cross">✕</span>} {row.tiimo}
+                {!row.check && "❌"} {row.tiimo}
               </div>
               <div className="compare-cell flowe-cell">
-                {row.check && <span className="check">✓</span>} {row.flowe}
+                {row.check && "✅"} {row.flowe}
               </div>
             </div>
           ))}

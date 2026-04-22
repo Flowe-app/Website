@@ -2,12 +2,12 @@ import { useLanguage } from "@/context/LanguageContext";
 import { WaveIcon, PaletteIcon, ChatIcon, BellIcon, RobotIcon, MoonIcon } from "@/components/ui/Icons";
 
 const FEATURE_ICONS = [
-  <WaveIcon key="wave" />,
-  <PaletteIcon key="palette" />,
-  <ChatIcon key="chat" />,
-  <BellIcon key="bell" />,
-  <RobotIcon key="robot" />,
-  <MoonIcon key="moon" />
+  "🧬",
+  "🗓️",
+  "💬",
+  "🔔",
+  "🤖",
+  "🌙"
 ];
 
 export default function Features() {
