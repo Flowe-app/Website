@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { WaveIcon, PaletteIcon, ChatIcon, BellIcon, RobotIcon, MoonIcon, BrainIcon, HourglassIcon, SparklesIcon, CheckIcon, CrossIcon } from "./Icons";
 
 type IconType = 
@@ -22,7 +22,7 @@ const EMOJI_MAP: Record<IconType, string> = {
   cross: "❌"
 };
 
-const SVG_MAP: Record<IconType, JSX.Element> = {
+const SVG_MAP: Record<IconType, React.JSX.Element> = {
   wave: <WaveIcon />,
   palette: <PaletteIcon />,
   chat: <ChatIcon />,
