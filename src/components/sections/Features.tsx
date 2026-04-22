@@ -1,13 +1,13 @@
 import { useLanguage } from "@/context/LanguageContext";
-import { WaveIcon, PaletteIcon, ChatIcon, BellIcon, RobotIcon, MoonIcon } from "@/components/ui/Icons";
+import DynamicIcon from "@/components/ui/DynamicIcon";
 
-const FEATURE_ICONS = [
-  "🧬",
-  "🗓️",
-  "💬",
-  "🔔",
-  "🤖",
-  "🌙"
+const FEATURE_ICONS: ("wave" | "palette" | "chat" | "bell" | "robot" | "moon")[] = [
+  "wave",
+  "palette",
+  "chat",
+  "bell",
+  "robot",
+  "moon"
 ];
 
 export default function Features() {
@@ -35,7 +35,7 @@ export default function Features() {
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <div className={`feature-icon ${index === 2 || index === 5 ? 'lavender' : index === 1 || index === 3 ? 'sage' : 'rose'}`}>
-                {FEATURE_ICONS[index]}
+                <DynamicIcon type={FEATURE_ICONS[index]} />
               </div>
               <h3 className="feature-title">{item.title}</h3>
               <p className="feature-body">

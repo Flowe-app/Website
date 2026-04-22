@@ -1,4 +1,5 @@
 import { useLanguage } from "@/context/LanguageContext";
+import DynamicIcon from "@/components/ui/DynamicIcon";
 
 export default function Challenges() {
   const { t } = useLanguage();
@@ -31,11 +32,7 @@ export default function Challenges() {
             >
               <div className="card-glow"></div>
               <div className="challenge-icon-wrap">
-                <span className="challenge-icon">
-                  {index === 0 && "🧠"}
-                  {index === 1 && "⏳"}
-                  {index === 2 && "✨"}
-                </span>
+                <DynamicIcon type={index === 0 ? "brain" : index === 1 ? "hourglass" : "sparkles"} className="challenge-icon" />
               </div>
               <h3 className="challenge-card-title">{item.title}</h3>
               <p className="challenge-text">

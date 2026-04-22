@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import DynamicIcon from "@/components/ui/DynamicIcon";
 
 export default function BetaCTA() {
   const [email, setEmail] = useState("");
@@ -70,7 +71,7 @@ export default function BetaCTA() {
               className="form-success reveal visible"
               style={{ display: "flex", animation: "fadeUp 0.5s ease both" }}
             >
-              ✅ {t.beta.success}
+              <DynamicIcon type="check" /> {t.beta.success}
             </div>
           )}
   
@@ -94,7 +95,7 @@ export default function BetaCTA() {
           <div className="beta-perks reveal">
             {t.beta.perks.map((perk, index) => (
               <div key={index} className="beta-perk" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                ✅ {perk}
+                <DynamicIcon type="check" /> {perk}
               </div>
             ))}
           </div>
