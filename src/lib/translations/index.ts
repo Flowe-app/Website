@@ -80,27 +80,28 @@ export const en = {
       { name: "Open beta", tiimo: "Waitlist", flowe: "Immediate access", check: true }
     ]
   },
-  testimonials: {
-    eyebrow: "From the community",
-    title: "What beta testers<br />are already saying",
+
+  challenges: {
+    eyebrow: "Built for you",
+    title: "Solving the <em>daily struggle</em>",
     items: [
       {
-        text: "Finally an app that doesn't make me feel bad for not completing my tasks. The AI just... adapts. It felt like it understood me on the first day.",
-        name: "Mariana R.",
-        label: "ADHD"
+        title: "Executive Dysfunction",
+        description: "Breaking the 'Wall of Awful'. Flowē's AI decomposes complex tasks into 5-minute micro-steps so you can just start."
       },
       {
-        text: "I've tried every productivity app. Flowē is the first one I didn't uninstall after a week. The visual timeline is exactly how my brain needs to see time.",
-        name: "Diego A.",
-        label: "Autism + ADHD"
+        title: "Time Blindness",
+        description: "Lose the anxiety, not the time. Our visual, color-coded timelines help you 'feel' the day passing at a glance."
       },
       {
-        text: "Other tools were too expensive or platform-locked. Flowē does more, costs less, and the dev actually listens in the Discord. This is the one.",
-        name: "Sofía V.",
-        label: "Dyslexia"
+        title: "Sensory Overload",
+        description: "A calm space for your focus. No red dots, no harsh buzzers. Just gentle, non-anxious nudges that respect your battery."
       }
     ]
   },
+
+
+
   updates: {
     eyebrow: "Dev updates",
     title: "Built in public",
@@ -133,6 +134,7 @@ export const en = {
     button: "Join Beta →",
     success: "You're on the list! We'll be in touch soon.",
     error: "Please enter a valid email",
+    serverError: "Something went wrong. Please try again later.",
     note: "We respect your inbox. No spam, ever.",
     perks: ["Free during beta", "Android & iOS", "Shape the product", "Discord community"]
   },
@@ -239,27 +241,28 @@ export const es = {
       { name: "Beta abierta", tiimo: "Lista de espera", flowe: "Acceso inmediato", check: true }
     ]
   },
-  testimonials: {
-    eyebrow: "De la comunidad",
-    title: "Lo que dicen nuestros<br />beta testers",
+
+  challenges: {
+    eyebrow: "Hecho para ti",
+    title: "Resolviendo la <em>lucha diaria</em>",
     items: [
       {
-        text: "Finalmente una app que no me hace sentir mal por no terminar mis tareas. La IA simplemente... se adapta. Sentí que me entendía desde el primer día.",
-        name: "Mariana R.",
-        label: "TDAH"
+        title: "Disfunción Ejecutiva",
+        description: "Rompe el 'Muro de lo Terrible'. La IA de Flowē divide tareas complejas en micro-pasos de 5 minutos para que solo tengas que empezar."
       },
       {
-        text: "He probado todas las apps de productividad. Flowē es la primera que no desinstalo tras una semana. La línea visual es justo como mi cerebro necesita ver el tiempo.",
-        name: "Diego A.",
-        label: "Autismo + TDAH"
+        title: "Ceguera del Tiempo",
+        description: "Pierde la ansiedad, no el tiempo. Nuestras líneas de tiempo visuales te ayudan a 'sentir' el paso del día de un vistazo."
       },
       {
-        text: "Otras herramientas eran muy caras o exclusivas. Flowē hace más, cuesta menos y el dev escucha en Discord. Esta es la indicada.",
-        name: "Sofía V.",
-        label: "Dislexia"
+        title: "Sobrecarga Sensorial",
+        description: "Un espacio calmo para tu enfoque. Sin puntos rojos ni alarmas estridentes. Solo empujoncitos amables que respetan tu energía."
       }
     ]
   },
+
+
+
   updates: {
     eyebrow: "Novedades de desarrollo",
     title: "Construido en público",
@@ -292,6 +295,7 @@ export const es = {
     button: "Unirse al Beta →",
     success: "¡Ya estás en la lista! Nos pondremos en contacto pronto.",
     error: "Ingresa un correo válido",
+    serverError: "Hubo un error al procesar tu solicitud. Inténtalo más tarde.",
     note: "Respetamos tu privacidad. Cero spam, siempre.",
     perks: ["Gratis en beta", "Android & iOS", "Influye en el producto", "Comunidad de Discord"]
   },

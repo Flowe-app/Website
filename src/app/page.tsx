@@ -6,7 +6,7 @@ import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
 import Features from "@/components/sections/Features";
 import Compare from "@/components/sections/Compare";
-import Testimonials from "@/components/sections/Testimonials";
+import Challenges from "@/components/sections/Challenges";
 import Updates from "@/components/sections/Updates";
 import BetaCTA from "@/components/sections/BetaCTA";
 import Footer from "@/components/layout/Footer";
@@ -49,7 +49,7 @@ export default function Home() {
       <Manifesto />
       <Features />
       <Compare />
-      <Testimonials />
+      <Challenges />
       <Updates />
       <BetaCTA />
       <Footer />
