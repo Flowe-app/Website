@@ -12,13 +12,22 @@ export default function LanguageSwitcher({ darkNavbar = false, className = "" }:
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div 
+    <div
+      role="button"
+      tabIndex={0}
+      aria-label={locale === "en" ? "Switch to Spanish" : "Switch to English"}
       className={`relative flex items-center p-0.5 rounded-full border border-white/10 backdrop-blur-md transition-all duration-300 cursor-pointer w-[80px] h-[28px] overflow-hidden ${
-        darkNavbar 
-          ? "bg-black/10" 
+        darkNavbar
+          ? "bg-black/10"
           : "bg-white/20 shadow-sm"
       } ${className}`}
       onClick={() => setLocale(locale === "en" ? "es" : "en")}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setLocale(locale === "en" ? "es" : "en");
+        }
+      }}
     >
       {/* Background Pill - The Glass Slide */}
       <motion.div
