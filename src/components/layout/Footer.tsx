@@ -19,16 +19,16 @@ export default function Footer() {
               dangerouslySetInnerHTML={{ __html: t.footer.tagline }}
             />
             <div className="footer-social">
-              <a href="#" className="social-link" title="Twitter/X">
+              <a href="#" className="social-link" aria-label="Twitter/X">
                 <TwitterIcon />
               </a>
-              <a href="#" className="social-link" title="Instagram">
+              <a href="#" className="social-link" aria-label="Instagram">
                 <InstagramIcon />
               </a>
-              <a href="#" className="social-link" title="Discord">
+              <a href="#" className="social-link" aria-label="Discord">
                 <DiscordIcon />
               </a>
-              <a href="#" className="social-link" title="GitHub">
+              <a href="#" className="social-link" aria-label="GitHub">
                 <GithubIcon />
               </a>
             </div>
