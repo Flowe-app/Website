@@ -136,6 +136,8 @@ export const en = {
     error: "Please enter a valid email",
     serverError: "Something went wrong. Please try again later.",
     note: "We respect your inbox. No spam, ever.",
+    consent: "I have read and agree to the <a href=\"/privacy\">Privacy Policy</a>. I consent to Flowē storing my email to send beta access and product updates.",
+    ageNote: "By joining you confirm you are 13 or older.",
     perks: ["Free during beta", "Android & iOS", "Shape the product", "Discord community"]
   },
   footer: {
@@ -297,6 +299,8 @@ export const es = {
     error: "Ingresa un correo válido",
     serverError: "Hubo un error al procesar tu solicitud. Inténtalo más tarde.",
     note: "Respetamos tu privacidad. Cero spam, siempre.",
+    consent: "He leído y acepto la <a href=\"/privacy\">Política de Privacidad</a>. Doy mi consentimiento para que Flowē almacene mi correo para enviarme acceso beta y actualizaciones del producto.",
+    ageNote: "Al unirte confirmas que tienes 13 años o más.",
     perks: ["Gratis en beta", "Android & iOS", "Influye en el producto", "Comunidad de Discord"]
   },
   footer: {

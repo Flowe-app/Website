@@ -754,6 +754,12 @@ section {
 .email-input:focus { border-color: var(--primary-soft); background: rgba(255,255,255,0.15); }
 .btn-rose { background: var(--primary); color: white; border: none; padding: 0.85rem 1.75rem; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; box-shadow: 0 8px 24px rgba(91,143,185,0.35); }
 .btn-rose:hover { background: #4A7EA8; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(91,143,185,0.5); }
+.btn-rose:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+.consent-row { width: 100%; display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; margin-top: 0.25rem; }
+.consent-row input[type="checkbox"] { width: 1rem; height: 1rem; accent-color: var(--primary); flex-shrink: 0; margin-top: 0.15rem; cursor: pointer; }
+.consent-row label { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.45; cursor: pointer; }
+.consent-row label a { color: rgba(255,255,255,0.85); text-decoration: underline; }
+.age-note { font-size: 0.75rem; color: rgba(255,255,255,0.38); margin-top: 0.25rem; margin-bottom: 0.75rem; }
 .beta-note { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.5); }
 .beta-perks { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; }
 .beta-perk { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.7); }
