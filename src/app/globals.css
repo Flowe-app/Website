@@ -934,5 +934,18 @@ section {
 
 html { scroll-behavior: smooth; }
 
+/* ── FOCUS RINGS (WCAG 2.4.7) ── */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+.nav-logo:focus-visible, .nav-links a:focus-visible { border-radius: 4px; }
+.nav-cta:focus-visible { border-radius: 100px; outline-offset: 4px; }
+.footer-links a:focus-visible, .social-link:focus-visible { outline-color: rgba(255,255,255,0.8); }
+[role="button"]:focus-visible { border-radius: 100px; outline-offset: 4px; }
+.email-input:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.btn-rose:focus-visible { outline-offset: 4px; border-radius: 100px; }
+.legal-lang-btn:focus-visible { border-radius: 100px; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
 /* ── SUCCESS STATE ── */
 .form-success { display: none; align-items: center; justify-content: center; gap: 0.5rem; color: var(--secondary); font-size: 0.9rem; font-weight: 600; padding: 0.85rem 1.75rem; background: rgba(123,174,127,0.15); border-radius: 100px; border: 1px solid rgba(123,174,127,0.3); margin: 0 auto; }

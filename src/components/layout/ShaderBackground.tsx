@@ -1,13 +1,17 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
+import { useReducedMotion } from "framer-motion"
 import { Shader, Swirl, ChromaFlow } from "shaders/react"
 
 export function ShaderBackground() {
   const [isLoaded, setIsLoaded] = useState(false)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (prefersReducedMotion) return
+
     const checkShaderReady = () => {
       if (shaderContainerRef.current) {
         const canvas = shaderContainerRef.current.querySelector("canvas")
@@ -35,7 +39,18 @@ export function ShaderBackground() {
       clearInterval(intervalId)
       clearTimeout(fallbackTimer)
     }
-  }, [])
+  }, [prefersReducedMotion])
+
+  if (prefersReducedMotion) {
+    return (
+      <div
+        className="fixed inset-0 z-[-1]"
+        style={{
+          background: "linear-gradient(135deg, #EDF1F5 0%, #D6E4F0 50%, #E8EDF2 100%)",
+        }}
+      />
+    )
+  }
 
   return (
     <div

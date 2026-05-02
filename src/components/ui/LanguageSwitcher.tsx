@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface LanguageSwitcherProps {
   darkNavbar?: boolean;
@@ -10,6 +10,7 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ darkNavbar = false, className = "" }: LanguageSwitcherProps) {
   const { locale, setLocale } = useLanguage();
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <div
@@ -29,31 +30,29 @@ export default function LanguageSwitcher({ darkNavbar = false, className = "" }:
         }
       }}
     >
-      {/* Background Pill - The Glass Slide */}
       <motion.div
         className={`absolute h-[calc(100%-6px)] w-[calc(50%-3px)] rounded-full z-0 border border-white/20 ${
           darkNavbar ? "bg-white/10" : "bg-white/60"
         }`}
         initial={false}
         animate={{ x: locale === "en" ? 0 : "100%" }}
-        transition={{ type: "spring", stiffness: 450, damping: 35 }}
+        transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", stiffness: 450, damping: 35 }}
       />
-      
-      {/* Labels */}
+
       <div className="relative flex w-full justify-between items-center z-10 px-1">
-        <span 
-          className={`flex-1 text-center text-[9px] font-bold tracking-widest transition-colors duration-300 ${
-            locale === "en" 
-              ? (darkNavbar ? "text-white" : "text-slate-900") 
+        <span
+          className={`flex-1 text-center text-[11px] font-bold tracking-widest transition-colors duration-300 ${
+            locale === "en"
+              ? (darkNavbar ? "text-white" : "text-slate-900")
               : "text-slate-400/50"
           }`}
         >
           EN
         </span>
-        <span 
-          className={`flex-1 text-center text-[9px] font-bold tracking-widest transition-colors duration-300 ${
-            locale === "es" 
-              ? (darkNavbar ? "text-white" : "text-slate-900") 
+        <span
+          className={`flex-1 text-center text-[11px] font-bold tracking-widest transition-colors duration-300 ${
+            locale === "es"
+              ? (darkNavbar ? "text-white" : "text-slate-900")
               : "text-slate-400/50"
           }`}
         >
