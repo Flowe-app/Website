@@ -70,6 +70,7 @@ export const en = {
     body: "We built Flowē to be the most accessible and intelligent routine engine ever made, regardless of your platform or location.",
     header: ["Feature", "Competitors", "Flowē"],
     subtitles: ["Limited platforms", "Universal access"],
+    disclaimer: "Competitor information is based on publicly available data and is approximate. Features and pricing may have changed.",
     rows: [
       { name: "Platform Support", tiimo: "iOS mostly", flowe: "Android + iOS + Web", check: true },
       { name: "Subscription", tiimo: "Static high-tier", flowe: "Fair global pricing", check: true },
@@ -231,6 +232,7 @@ export const es = {
     body: "Creamos Flowē para ser el motor de rutinas más accesible e inteligente jamás hecho, sin importar tu plataforma o ubicación.",
     header: ["Función", "Competencia", "Flowē"],
     subtitles: ["Plataformas limitadas", "Acceso universal"],
+    disclaimer: "La información sobre competidores se basa en datos públicos y es aproximada. Las funciones y precios pueden haber cambiado.",
     rows: [
       { name: "Soporte de Plataformas", tiimo: "Principalmente iOS", flowe: "Android + iOS + Web", check: true },
       { name: "Suscripción", tiimo: "Estática y costosa", flowe: "Precios globales justos", check: true },
