@@ -59,8 +59,8 @@ export default function Footer() {
               <div className="footer-col-title">{t.footer.cols.info.title}</div>
               <ul className="footer-links">
                 <li><a href="#">{t.footer.cols.info.links[0]}</a></li>
-                <li><a href="#">{t.footer.cols.info.links[1]}</a></li>
-                <li><a href="#">{t.footer.cols.info.links[2]}</a></li>
+                <li><a href="/privacy">{t.footer.cols.info.links[1]}</a></li>
+                <li><a href="/terms">{t.footer.cols.info.links[2]}</a></li>
                 <li><a href="#">{t.footer.cols.info.links[3]}</a></li>
               </ul>
             </div>
