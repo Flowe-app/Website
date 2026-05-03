@@ -754,6 +754,12 @@ section {
 .email-input:focus { border-color: var(--primary-soft); background: rgba(255,255,255,0.15); }
 .btn-rose { background: var(--primary); color: white; border: none; padding: 0.85rem 1.75rem; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; box-shadow: 0 8px 24px rgba(91,143,185,0.35); }
 .btn-rose:hover { background: #4A7EA8; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(91,143,185,0.5); }
+.btn-rose:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+.consent-row { width: 100%; display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; margin-top: 0.25rem; }
+.consent-row input[type="checkbox"] { width: 1rem; height: 1rem; accent-color: var(--primary); flex-shrink: 0; margin-top: 0.15rem; cursor: pointer; }
+.consent-row label { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.45; cursor: pointer; }
+.consent-row label a { color: rgba(255,255,255,0.85); text-decoration: underline; }
+.age-note { font-size: 0.75rem; color: rgba(255,255,255,0.38); margin-top: 0.25rem; margin-bottom: 0.75rem; }
 .beta-note { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.5); }
 .beta-perks { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; }
 .beta-perk { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.7); }
@@ -933,6 +939,20 @@ section {
 }
 
 html { scroll-behavior: smooth; }
+
+/* ── LEGAL PAGES ── */
+.legal-page { max-width: 720px; margin: 0 auto; padding: 8rem 2rem 6rem; }
+.legal-page h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; line-height: 1.15; }
+.legal-meta { font-size: 0.82rem; color: var(--ink-muted); margin-bottom: 2.5rem; }
+.legal-page h2 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-top: 2.5rem; margin-bottom: 0.6rem; }
+.legal-page p { font-size: 0.975rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 1rem; }
+.legal-page ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+.legal-page li { font-size: 0.975rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 0.2rem; }
+.legal-page a { color: var(--primary); text-decoration: underline; }
+.legal-lang-toggle { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; }
+.legal-lang-btn { background: none; border: 1px solid var(--border); color: var(--ink-muted); padding: 0.3rem 1rem; border-radius: 100px; font-size: 0.82rem; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+.legal-lang-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+.compare-disclaimer { font-size: 0.78rem; color: var(--ink-muted); text-align: center; margin-top: 1.5rem; font-style: italic; }
 
 /* ── FOCUS RINGS (WCAG 2.4.7) ── */
 :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }

@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase/server';
 
+const CONSENT_VERSION = '1.0';
+
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json();
+    const { email, consent } = await request.json();
 
     if (!email || !email.includes('@')) {
       return NextResponse.json(
@@ -12,10 +14,21 @@ export async function POST(request: Request) {
       );
     }
 
-    // Insert the email into the 'waitlist' table
+    if (consent !== true) {
+      return NextResponse.json(
+        { error: 'Consent is required.' },
+        { status: 400 }
+      );
+    }
+
     const { data, error } = await supabaseAdmin
       .from('waitlist')
-      .insert([{ email }])
+      .insert([{
+        email,
+        consent: true,
+        consented_at: new Date().toISOString(),
+        consent_version: CONSENT_VERSION,
+      }])
       .select();
 
     if (error) {

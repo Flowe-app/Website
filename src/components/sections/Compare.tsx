@@ -45,6 +45,7 @@ export default function Compare() {
             </div>
           ))}
         </div>
+        <p className="compare-disclaimer">{t.compare.disclaimer}</p>
       </div>
     </section>
   );

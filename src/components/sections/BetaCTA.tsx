@@ -6,6 +6,7 @@ import DynamicIcon from "@/components/ui/DynamicIcon";
 
 export default function BetaCTA() {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "serverError">("idle");
   const { t } = useLanguage();
 
@@ -22,7 +23,7 @@ export default function BetaCTA() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, consent }),
       });
 
       if (!res.ok) {
@@ -66,9 +67,26 @@ export default function BetaCTA() {
                   status === "error" ? "rgba(91,143,185,0.8)" : undefined,
               }}
             />
-            <button className="btn-rose" type="submit" disabled={status === "loading"}>
+            <button
+              className="btn-rose"
+              type="submit"
+              disabled={status === "loading" || !consent}
+            >
               {status === "loading" ? "..." : t.beta.button}
             </button>
+            <div className="consent-row">
+              <input
+                id="beta-consent"
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                required
+              />
+              <label
+                htmlFor="beta-consent"
+                dangerouslySetInnerHTML={{ __html: t.beta.consent }}
+              />
+            </div>
           </form>
         ) : (
           <div
@@ -90,6 +108,8 @@ export default function BetaCTA() {
             {t.beta.serverError || "Error interno del servidor. Por favor intenta de nuevo."}
           </p>
         )}
+
+        <p className="age-note reveal">{t.beta.ageNote}</p>
 
         <p className="beta-note reveal">
           {t.beta.note}
